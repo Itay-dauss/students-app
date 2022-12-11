@@ -74,4 +74,12 @@ public class EditStudentActivity extends AppCompatActivity {
         addressTv.setText(student.address);
         checkedCb.setChecked(student.cb);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent studentDetailsIntent = new Intent(EditStudentActivity.this, StudentDetailsActivity.class);
+        studentDetailsIntent.putExtra("studentDetails", student);
+        studentDetailsIntent.putExtra("studentIndex", studentIndex);
+        startActivity(studentDetailsIntent);
+    }
 }

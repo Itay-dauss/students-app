@@ -118,4 +118,11 @@ public class StudentsListActivity extends AppCompatActivity {
             return studentList.size();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent MainScreenIntent = new Intent(StudentsListActivity.this, MainActivity.class);
+        startActivity(MainScreenIntent);
+    }
+
 }

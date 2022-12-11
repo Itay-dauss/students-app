@@ -25,8 +25,8 @@ public class StudentDetailsActivity extends AppCompatActivity {
         studentIndex = getIntent().getIntExtra("studentIndex", -1);
         setStudentData(student);
 
-        Button addStudentBtn = findViewById(R.id.edit_student_button);
-        addStudentBtn.setOnClickListener(view -> {
+        Button editStudentBtn = findViewById(R.id.edit_student_button);
+        editStudentBtn.setOnClickListener(view -> {
             Intent editStudentIntent = new Intent(StudentDetailsActivity.this, EditStudentActivity.class);
             editStudentIntent.putExtra("studentDetails", student);
             editStudentIntent.putExtra("studentIndex", studentIndex);
@@ -50,4 +50,11 @@ public class StudentDetailsActivity extends AppCompatActivity {
         checkedCb.setChecked(student.cb);
         checkedCb.setEnabled(false);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent studentsListIntent = new Intent(StudentDetailsActivity.this, StudentsListActivity.class);
+        startActivity(studentsListIntent);
+    }
+
 }

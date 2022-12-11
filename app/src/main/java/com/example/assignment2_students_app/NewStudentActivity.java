@@ -39,6 +39,12 @@ public class NewStudentActivity extends AppCompatActivity {
             Intent studentsListIntent = new Intent(NewStudentActivity.this, StudentsListActivity.class);
             startActivity(studentsListIntent);
         });
-
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent StudentsListIntent = new Intent(NewStudentActivity.this, StudentsListActivity.class);
+        startActivity(StudentsListIntent);
+    }
+
 }
